@@ -23,9 +23,11 @@ def execute(
         limit=3600
 ) -> tuple[list[int], int, str]:
     """
-    execute a sorting function with a test set.
-    @param sort: the sorting function to test.
-    @param input_data: the data to sort.
+    execute a sorting function on a test data set.
+    @param sort the sorting function to test.
+    @param input_data the data to sort.
+    @param limit the maximum number of comparison operations.
+    @return tuple of the sorted data, comparison count and comparison count string.
     """
     counter = Counter(limit=limit)
     input_elements = [Element(counter, i) for i in input_data]
@@ -36,8 +38,9 @@ def execute(
 
 def load_data(path: str) -> list[list[int]]:
     """
-    load the test data from a file.
-    @param path: file path.
+    load a test data file.
+    @param path file path.
+    @return the test data structure.
     """
     with open(path) as file:
         structure = json.load(file)
@@ -50,8 +53,8 @@ def load_data(path: str) -> list[list[int]]:
 def save_data(path: str, data: list[list[int]]) -> None:
     """
     save the test (result) data to a file.
-    @param path: file path.
-    @param data: data to save.
+    @param path file path.
+    @param data data to save.
     """
     with open(path, 'wt') as file:
         save_data_file(file, data)
@@ -59,8 +62,8 @@ def save_data(path: str, data: list[list[int]]) -> None:
 def save_data_file(file: TextIO, data: list[list[int]]) -> None:
     """
     save the test data to an opened file.
-    @param file: file to save to.
-    @param data: data to save.
+    @param file file to save to.
+    @param data data to save.
     """
     print('[', file=file)
     for i, item in enumerate(data, start=1):
