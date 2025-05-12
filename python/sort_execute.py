@@ -81,10 +81,10 @@ if __name__ == '__main__':
         'data_path', help='path of test data (json list of test sets which are lists of integers)')
     args = parser.parse_args()
     try:
+        sort_function = sort_functions[args.algorithm]
         input_data = load_data(args.data_path)
         output_data = []
         for data_set in input_data:
-            sort_function = sort_functions[args.algorithm]
             output, _, _ = execute(sort_function, data_set)
             output_data.append(output)
         save_data_file(sys.stdout, output_data)
