@@ -10,11 +10,11 @@ import stage4
 
 
 sort_functions = {
-    "stage_1": stage1.sort,
-    "stage_2": stage2.sort,
-    "stage_3": stage3.sort,
-    "stage_4": stage4.sort,
-    "python": lambda elements: elements.sort(),
+    'stage1': stage1.sort,
+    'stage2': stage2.sort,
+    'stage3': stage3.sort,
+    'stage4': stage4.sort,
+    'pylist': lambda elements: elements.sort(),
 }
 
 def execute(
