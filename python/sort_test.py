@@ -7,15 +7,15 @@ test_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 def test(algorithm: str) -> None:
     """
     test a sorting algorithm with all test data sets until it fails.
-    @param algorithm: the sorting algorithm to test.
+    @param algorithm the sorting algorithm to test.
     """
     print(f'testing {algorithm}...')
 
     # go through all test data set stages
     for data_stage in range(1, 6):
         # load test data (input and expected output is in separate files)
-        input_name = os.path.join(test_dir, f'input_stage_{data_stage}.json')
-        output_name = os.path.join(test_dir, f'output_stage_{data_stage}.json')
+        input_name = f'input_stage_{data_stage}.json'
+        output_name = f'output_stage_{data_stage}.json'
         print(f'  data sets of {input_name}...')
         input_list = sort_execute.load_data(os.path.join(test_dir, input_name))
 
