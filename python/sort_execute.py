@@ -3,17 +3,17 @@ from typing import Callable, TextIO
 
 from Element import Element
 from Counter import Counter
-import stage_1
-import stage_2
-import stage_3
-import stage_4
+import stage1
+import stage2
+import stage3
+import stage4
 
 
 sort_functions = {
-    "stage_1": stage_1.sort,
-    "stage_2": stage_2.sort,
-    "stage_3": stage_3.sort,
-    "stage_4": stage_4.sort,
+    "stage_1": stage1.sort,
+    "stage_2": stage2.sort,
+    "stage_3": stage3.sort,
+    "stage_4": stage4.sort,
     "python": lambda elements: elements.sort(),
 }
 
