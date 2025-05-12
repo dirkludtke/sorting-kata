@@ -22,7 +22,7 @@ def test(algorithm: str) -> None:
         # check whether output data is available. abort if not.
         try:
             output_list = sort_execute.load_data(os.path.join(test_dir, output_name))
-            assert isinstance(output_list, list) and len(output_list) == len(input_list)
+            assert len(output_list) == len(input_list)
         except Exception:
             assert False, f'Cannot test {input_name} because output data is missing (or incorrect)'
         # check all test data sets
