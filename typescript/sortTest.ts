@@ -88,7 +88,7 @@ function printUsage() {
   console.log('\nTest a sorting algortithm with all test data sets until it fails');
   let scriptName = basename(process.argv[1]);
   let algorithms = '{' + Object.keys(sortFunctions).join(', ') + '}';
-  console.log(`Usage: ${scriptName} <algorithm> <dataPath>`);
+  console.log(`Usage: ${scriptName} <algorithm>`);
   console.log(`- algorithm: one of ${algorithms}`);
 }
 
