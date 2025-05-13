@@ -1,0 +1,8 @@
+{
+  "name": "sorting-kata",
+  "description": "Algorithmic kata for generating test data while improving sorting algorithms",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^22.15.17"
+  }
+}
