@@ -39,22 +39,20 @@ def test_datasets(
     fail_count = 0
     for test_id, (input_data, expected) in enumerate(zip(input_list, output_list), 1):
         output, _, count_str = sort_execute.execute(sort, input_data)
-        print(f"    tested case {test_id} {shorten(input_data)} in {count_str}")
+        print(f"    case {test_id} {listToString(input_data)} in {count_str}")
         if output != expected:
-            print(f"FAILED.\noutput   {output} !=\nexpected {expected}")
+            output_str = listToString(output, -1)
+            expected_str = listToString(expected, -1)
+            print(f"FAILED.\noutput   {output_str} !=\nexpected {expected_str}")
             fail_count += 1
     # abort if a test case failed
-    assert fail_count == 0, f"{fail_count} test cases failed for stage {data_stage}."
+    plural = 's' if fail_count != 1 else ''
+    assert fail_count == 0, f"{fail_count} test case{plural} failed."
 
-class Threedots:
-    def __repr__(self):
-        return '...'
-threedots = Threedots()
-
-def shorten(data: list, max_length: int = 4) -> str:
-    if len(data) > max_length:
-        return str(data[:max_length] + [threedots]) + f' (length {len(data)})'
-    return str(data)
+def listToString(data: list, max_length: int = 4) -> str:
+    if max_length >= 0 and len(data) > max_length:
+        return f'[{", ".join(str(n) for n in data[:max_length])}, ...] (length {len(data)})'
+    return f'[{", ".join(str(n) for n in data)}]'
 
 
 if __name__ == '__main__':
