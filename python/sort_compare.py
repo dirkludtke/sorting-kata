@@ -62,26 +62,20 @@ def compare() -> None:
             print(f"{sort_name:8}: {', '.join(sort_results[stage_id])}")
 
 def get_positions(scores: list[int | None]) -> list[int]:
-    """
-    determine the position of each algorthm (1) being the best. if there are multiple algorthims
-    with the same score, they get the same position and the next positions are skipped.
-    """
-    score_ids = {}
-    for i, score in enumerate(scores):
-        score_ids.setdefault(score, []).append(i)
-    pos = 1
+    pos, count, last = 1, 0, 0
     positions = [None] * len(scores)
-    for score in sorted(score_ids.keys(), key=lambda score: (score is None, score)):
-        for i in score_ids[score]:
-            positions[i] = pos
-        pos += len(score_ids[score])
+    for i, score in sorted(enumerate(scores), key=lambda x: (x[1] is None, x[1])):
+        if count == 0 or last != score:
+            pos, count, last = pos + count, 0, score
+        count += 1
+        positions[i] = pos
     return positions
 
 
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='''
-        Compares the different sorting algorithm implementations and the Python list.sort function.
+        Compare the different sorting algorithm implementations and the Python list.sort function.
     ''')
     args = parser.parse_args()
     compare()
