@@ -71,7 +71,7 @@ function printUsage() {
   let algorithms = '{' + Object.keys(sortFunctions).join(', ') + '}';
   console.log(`Usage: ${scriptName} <algorithm> <dataPath>`);
   console.log(`- algorithm: one of ${algorithms}`);
-  console.log('- dataPath:  path of test data (json list of test sets which are lists of integers)');
+  console.log('- dataPath:  path of test data (json array of integer array test sets)');
 }
 
 

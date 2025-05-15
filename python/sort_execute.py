@@ -78,7 +78,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Execute a sort algorithm with some test data')
     parser.add_argument('algorithm', choices=sort_functions.keys(), help='algorithm to test')
     parser.add_argument(
-        'data_path', help='path of test data (json list of test sets which are lists of integers)')
+        'data_path', help='path of test data (json array of integer array test sets)')
     args = parser.parse_args()
     try:
         sort_function = sort_functions[args.algorithm]
