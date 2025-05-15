@@ -1,5 +1,5 @@
 import { basename } from 'path';
-import { readFile, writeFile } from 'fs/promises';
+import { readFile } from 'fs/promises';
 
 import { ListElement } from './Element.ts';
 import { Counter } from './Counter.ts';
