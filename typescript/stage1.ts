@@ -8,6 +8,13 @@ import type { ListElement } from "./Element";
 function sort(elements: ListElement[]): void {
   // even if you know faster algorithms, here, we want the simplest solution possible.
   // something like bubble sort or insertion sort is fine. maximum 6 lines of code.
+  for (let i = 0; i < elements.length - 1; i++) {
+    for (let j = i + 1; j < elements.length; j++) {
+      if (elements[i].greaterThan(elements[j])) {
+        [elements[i], elements[j]] = [elements[j], elements[i]];
+      }
+    }
+  }
 }
 
 
