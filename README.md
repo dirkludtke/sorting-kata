@@ -45,6 +45,27 @@ The test data is created in a way, that an algorithm of stage n can handle the d
 stages until n + 1. You can use it to create the test data of the next stage but you need
 to implement the next stage before you can move on.
 
+## Usage Details
+
+### Java
+We tested with Java 21.0.7. For generating and running .class files next to their .java
+source files:
+- cd sorting-kata/java
+- javac SortExecute.java (or, respectively, SortTest.java)
+- java SortExecute (or respecitively, SortTest)
+
+### Python
+We tested with Python 3.12.3. Just run the scripts:
+- python sorting-kata/python/sort_execute.py (or, respectively, sort_test.py)
+
+### Typescript
+We tested with Node 24.0.1 using its native Typescript support. As this is still an
+experimental features, Node generates a warning at the beginning. You can suppress it
+with the --no-warnings flag. Please note that Node versions prior to 22.6.0 do not
+support this at all, and that you need the flag --experimental-strip-types before
+version 23.6.0.
+- node --no-warnings sorting-kata/typescript/sortExecute.ts (or, respectively, sortTest.ts)
+
 ## Material
 
 Wikipedia has some really great articles for depening on the topics of this kata.
