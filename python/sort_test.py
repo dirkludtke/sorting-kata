@@ -60,9 +60,8 @@ if __name__ == '__main__':
     import sys
     parser = argparse.ArgumentParser(
         description='Tests a sorting algortithm with all test data sets until it fails')
-    choices = list(sort_execute.sort_functions.keys())
     parser.add_argument(
-        'algorithm', nargs='?', default=choices[0], choices=choices, help='algorithm to test')
+        'algorithm', choices=sort_execute.sort_functions.keys(), help='algorithm to test')
     args = parser.parse_args()
     try:
         test(args.algorithm)
