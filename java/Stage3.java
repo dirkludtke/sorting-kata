@@ -6,7 +6,7 @@ class Stage3 implements Stage {
      */
     @Override
     public void sort(Element[] elements) {
-      // quicksort has a worst case of O(n**2). let's go with something like mergesort.
+        // quicksort has a worst case of O(n**2). let's go with something like mergesort.
     }
 
 }
