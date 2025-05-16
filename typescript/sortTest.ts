@@ -33,8 +33,9 @@ async function test(algorithm: keyof typeof sortFunctions) {
     }
     if (outputArray == undefined) {
       throw new Error(`Cannot test ${inputName} because output data is missing (or incorrect)`);
-    }    // check all test data sets
+    }
 
+    // check all test data sets
     testDatasets(sort, inputArray, outputArray);
   }
 }
