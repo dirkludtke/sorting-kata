@@ -1,4 +1,5 @@
 use std::cell::RefCell;
+use std::clone;
 use crate::counter::Counter;
 
 /// a wrapper around integers which counts the number of comparison and value accesses.
@@ -44,5 +45,14 @@ impl<'a> PartialOrd<Element<'_>> for Element<'a> {
 impl<'a> Ord for Element<'a> {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         self.value.cmp(&other.get_value())
+    }
+}
+
+impl<'a> clone::Clone for Element<'a> {
+    fn clone(&self) -> Self {
+        Self {
+            value: self.value,
+            counter: self.counter,
+        }
     }
 }
