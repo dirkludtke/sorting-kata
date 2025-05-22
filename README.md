@@ -58,6 +58,11 @@ source files:
 We tested with Python 3.12.3. Just run the scripts:
 - python sorting-kata/python/sort_execute.py (or, respectively, sort_test.py)
 
+### Rust
+We tested with Rust 1.87.0. It works. But as we are not very confident in Rust, please help to improve:
+- cd sorting-kata/rust
+- cargo run --bin sort_execute (or, respectively, sort_test)
+
 ### Typescript
 We tested with Node 24.0.1 using its native Typescript support. As this is still an
 experimental features, Node generates a warning at the beginning. You can suppress it
