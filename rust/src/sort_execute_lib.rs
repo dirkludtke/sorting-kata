@@ -89,6 +89,8 @@ pub fn execute(
     if let Err(panic_info) = result {
         if let Some(message) = panic_info.downcast_ref::<String>() {
             return Err(message.to_string());
+        } else if let Some(message) = panic_info.downcast_ref::<&str>() {
+            return Err(message.to_string());
         } else {
             return Err("Panic without message.".to_string());
         }
