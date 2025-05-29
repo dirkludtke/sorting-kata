@@ -45,7 +45,30 @@ The test data is created in a way, that an algorithm of stage n can handle the d
 stages until n + 1. You can use it to create the test data of the next stage but you need
 to implement the next stage before you can move on.
 
-## Usage Details
+### Jumping ahead
+
+In case you want to try a later stage without solving the prior ones or compare with your 
+own solution, we provide solutions in git branches named according to the stage they solve.
+But be warned, it is much less fun if you skip a stage.
+
+- git switch [name of stage branch]
+
+stage0
+: test data for stage1 (created by hand)
+
+stage1
+: a solution for stage1, test data for stage2 (which cannot be created by hand)
+
+stage2
+: a solution for stage2, test data for stage3 (which cannot be created by stage1)
+
+stage3
+: a solution for stage3, test data for stage4 (which cannot be created by stage2)
+
+stage4
+: a solution for stage4, test data for stage5 (which cannot be created by stage3)
+
+## Usage details
 
 ### Java
 We tested with Java 21.0.7. For generating and running .class files next to their .java
