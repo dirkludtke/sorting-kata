@@ -68,6 +68,28 @@ stage3
 stage4
 : a solution for stage4, test data for stage5 (which cannot be created by stage3)
 
+## Material
+
+Wikipedia has some really great articles for depening on the topics of this kata.
+
+sorting in general
+: https://en.wikipedia.org/wiki/Sorting_algorithm
+
+bubble sort
+: https://en.wikipedia.org/wiki/Bubble_sort
+
+insertion sort
+: https://en.wikipedia.org/wiki/Insertion_sort
+
+quicksort
+: https://en.wikipedia.org/wiki/Quicksort
+
+complexity theory
+: https://en.wikipedia.org/wiki/Computational_complexity_theory
+
+big O notation
+: https://en.wikipedia.org/wiki/Big_O_notation
+
 ## Usage details
 
 ### Java
@@ -94,25 +116,16 @@ support this at all, and that you need the flag --experimental-strip-types befor
 version 23.6.0.
 - node --no-warnings sorting-kata/typescript/sortExecute.ts (or, respectively, sortTest.ts)
 
-## Material
+### Your Most Favorite Language not in This List
+We welcome your contribution. You would need to provide:
 
-Wikipedia has some really great articles for depening on the topics of this kata.
-
-sorting in general
-: https://en.wikipedia.org/wiki/Sorting_algorithm
-
-bubble sort
-: https://en.wikipedia.org/wiki/Bubble_sort
-
-insertion sort
-: https://en.wikipedia.org/wiki/Insertion_sort
-
-quicksort
-: https://en.wikipedia.org/wiki/Quicksort
-
-complexity theory
-: https://en.wikipedia.org/wiki/Computational_complexity_theory
-
-big O notation
-: https://en.wikipedia.org/wiki/Big_O_notation
-
+- Counter: a counter for the number of comparisons which (1) can count up by one, (2) throws an error if the count reaches a threshold whose default is 3600, (3) return the current count and (4) converting counts into strings representing seconds or, if large enough, rounded minutes, days or years.
+  - 0: "0 seconds"
+  - 1: "1 second"
+  - 89: "1 minute"
+  - 90: "2 minutes"
+- Element: a wrapper around integers which works inside regular sort functions and triggers the counter when accessed in comparisons.
+  - int(element1): conversion to integer increases the count by 1.
+  - compare(element1, element2): a comparison increases the count by 1. We indirectly counted up by calling element1.compare(int(element2)).
+- SortExecute: an executable which reads a json array of arrays of integers, sorts each of the inner arrays with one of the sort implementations and writes the results back to stdout. Internally, it should convert integers to Elements and re-initialize the counter for each sorting.
+- SortTest: an executable which tests one of the sort implementations. It knows the locations of the input and output files, checks them in order and outputs the test results and counter time needed. If a sorting causes an error (e.g. by counter threshold) the test should abort.
