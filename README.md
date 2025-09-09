@@ -114,7 +114,9 @@ experimental features, Node generates a warning at the beginning. You can suppre
 with the --no-warnings flag. Please note that Node versions prior to 22.6.0 do not
 support this at all, and that you need the flag --experimental-strip-types before
 version 23.6.0.
-- node --no-warnings sorting-kata/typescript/sortExecute.ts (or, respectively, sortTest.ts)
+- cd sorting-kata/typescript
+- npm install (getting type definitions for node)
+- node --no-warnings sortExecute.ts (or, respectively, sortTest.ts)
 
 ### Your Most Favorite Language not in This List
 We welcome your contribution. You would need to provide:
